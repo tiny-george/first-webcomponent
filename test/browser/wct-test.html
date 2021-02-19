@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../../node_modules/web-component-tester/browser.js"></script>
+    <script type="module" src="../../src/hierarchical-browser.js"></script>
+</head>
+<body>
+<hierarchical-browser></hierarchical-browser>
+<script>
+
+    suite('testing browser component', function() {
+        const browser = document.body.querySelector('hierarchical-browser');
+
+        test('load browser component', function () {
+            assert.equal(browser.innerHTML, "<p>Loading browser...</p>");
+        });
+});
+
+</script>
+</body>
+</html>
