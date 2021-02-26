@@ -4,19 +4,34 @@
     <meta charset="utf-8">
     <script src="../../node_modules/web-component-tester/browser.js"></script>
     <script type="module" src="../../src/hierarchical-browser.js"></script>
+    <style>
+        p {
+            color: green;
+        }
+    </style>
 </head>
 <body>
-<template id="hierarchical-template">
-    <p>Loading browser with workspace <span class="workspace-name"></span> ...</p>
-</template>
-<hierarchical-browser></hierarchical-browser>
+    <p>Testing web component <span>hierarchical-browser</span></p>
+
+    <template id="hierarchical-template">
+        <style>
+            span {
+                color: grey;
+            }
+        </style>
+        <p>Loading browser with workspace <span class="workspace-name"></span> ...</p>
+    </template>
+
+    <hierarchical-browser></hierarchical-browser>
+
 <script>
 
     suite('testing browser component', function() {
         const browser = document.body.querySelector('hierarchical-browser');
 
         test('load browser component', function () {
-            expect(browser.innerHTML).to.contain("<p>Loading browser with workspace <span class=\"workspace-name\">my-workspace</span> ...</p>");
+            assert.equal(browser.innerHTML, "");
+            expect(browser.shadowRoot.innerHTML).to.contain("Loading browser with workspace");
         });
 });
 
