@@ -7,7 +7,7 @@
 </head>
 <body>
 <template id="hierarchical-template">
-    <p>Loading browser...</p>
+    <p>Loading browser with workspace <span class="workspace-name"></span> ...</p>
 </template>
 <hierarchical-browser></hierarchical-browser>
 <script>
@@ -16,7 +16,7 @@
         const browser = document.body.querySelector('hierarchical-browser');
 
         test('load browser component', function () {
-            expect(browser.innerHTML).to.contain("<p>Loading browser...</p>");
+            expect(browser.innerHTML).to.contain("<p>Loading browser with workspace <span class=\"workspace-name\">my-workspace</span> ...</p>");
         });
 });
 
