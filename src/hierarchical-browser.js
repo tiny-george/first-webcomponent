@@ -1,7 +1,9 @@
 export default class HierarchicalBrowser extends HTMLElement {
 
     connectedCallback() {
-        this.innerHTML = "<p>Loading browser...</p>"
+        const template = document.getElementById('hierarchical-template');
+        const instance = document.importNode(template.content, true);
+        this.appendChild(instance);
     }
 }
 

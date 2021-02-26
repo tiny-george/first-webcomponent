@@ -6,6 +6,9 @@
     <script type="module" src="../../src/hierarchical-browser.js"></script>
 </head>
 <body>
+<template id="hierarchical-template">
+    <p>Loading browser...</p>
+</template>
 <hierarchical-browser></hierarchical-browser>
 <script>
 
@@ -13,7 +16,7 @@
         const browser = document.body.querySelector('hierarchical-browser');
 
         test('load browser component', function () {
-            assert.equal(browser.innerHTML, "<p>Loading browser...</p>");
+            expect(browser.innerHTML).to.contain("<p>Loading browser...</p>");
         });
 });
 
